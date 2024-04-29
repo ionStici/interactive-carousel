@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #333;
@@ -112,7 +112,7 @@ body {
 }
 
 .img-1 {
-  background-image: url(images/img-1.jpg);
+  background-image: url(./../images/img-1.jpg);
 }
 
 .img-2 {
@@ -121,7 +121,7 @@ body {
       rgba(255, 216, 168, 0.2),
       rgba(255, 216, 168, 0.2)
     ),
-    url(images/img-2.jpg);
+    url(./../images/img-2.jpg);
   background-position: bottom;
 }
 
@@ -131,7 +131,7 @@ body {
       rgba(255, 201, 201, 0.25),
       rgba(255, 201, 201, 0.25)
     ),
-    url(images/img-3.jpg);
+    url(./../images/img-3.jpg);
 }
 
 .slider__content-box__text {

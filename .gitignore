@@ -1,5 +1,4 @@
 .DS_Store
 thumbs.db
-
-.prettierrc
-.prettierignore
+node_modules
+dist

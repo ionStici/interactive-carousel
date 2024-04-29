@@ -1,0 +1,30 @@
+{
+  "name": "interactive-carousel",
+  "version": "1.0.0",
+  "description": "Interactive Carousel Component",
+  "main": "index.html",
+  "author": "Ion Stici",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionStici/interactive-carousel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionStici/interactive-carousel/issues"
+  },
+  "homepage": "https://github.com/ionStici/interactive-carousel#readme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "eslint": "^9.1.1",
+    "gh-pages": "^6.1.1",
+    "globals": "^15.1.0",
+    "vite": "^5.2.10"
+  }
+}
