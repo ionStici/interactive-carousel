@@ -1,62 +1,40 @@
 'use strict';
 
-// ROOT
-const root = document.documentElement;
-
-// COLORS
-const colorBlue1 = '#a5d8ff';
-const colorBlue2 = '#1c7ed6';
-const colorBlueText = '#1864ab';
-const blue = [colorBlue1, colorBlue2, colorBlueText];
-
-const colorBrown1 = '#ffd8a8';
-const colorBrown2 = '#e8590c';
-const colorBrownText = '#d9480f';
-const brown = [colorBrown1, colorBrown2, colorBrownText];
-
-const colorRed1 = '#ffc9c9';
-const colorRed2 = '#e03131';
-const colorRedText = '#c92a2a';
-const red = [colorRed1, colorRed2, colorRedText];
-
-// SET COLORS
-const setColor = function (currentSlide) {
-  if (currentSlide === 0) {
-    root.style.setProperty('--color-1', blue[0]);
-    root.style.setProperty('--color-2', blue[1]);
-    root.style.setProperty('--color-text', blue[2]);
-    return;
-  }
-
-  if (currentSlide === 1) {
-    root.style.setProperty('--color-1', brown[0]);
-    root.style.setProperty('--color-2', brown[1]);
-    root.style.setProperty('--color-text', brown[2]);
-    return;
-  }
-
-  if (currentSlide === 2) {
-    root.style.setProperty('--color-1', red[0]);
-    root.style.setProperty('--color-2', red[1]);
-    root.style.setProperty('--color-text', red[2]);
-    return;
-  }
-};
-
-// SLIDER
 const slider = function () {
-  // ELEMENTS //
-  const slider = document.querySelector('.slider');
+  // ELEMENTS
   const slides = document.querySelectorAll('.slider__slide');
   const btnLeft = document.querySelector('.slider__btn--left');
   const btnRight = document.querySelector('.slider__btn--right');
   const dotContainer = document.querySelector('.slider__dots');
 
-  // STATE //
+  // STATE
   let currentSlide = 0;
   const maxSlide = slides.length;
 
-  // FUNCTIONS //
+  // COLOR LOGIC
+  const setCustomProperty = (customProperty, value) => {
+    document.documentElement.style.setProperty(customProperty, value);
+  };
+
+  const customProperties = ['--color-1', '--color-2', '--color-text'];
+
+  const colors = [
+    ['#a5d8ff', '#1c7ed6', '#1864ab'],
+    ['#ffd8a8', '#e8590c', '#d9480f'],
+    ['#ffc9c9', '#e03131', '#c92a2a'],
+  ];
+
+  const setColor = function (currentSlide) {
+    colors.forEach((colors, i) => {
+      if (currentSlide !== i) return;
+
+      colors.forEach((color, i) => {
+        setCustomProperty(customProperties[i], color);
+      });
+    });
+  };
+
+  // FUNCTIONS
   const createDots = function () {
     dotContainer.innerHTML = '';
     slides.forEach((_, i) => {
@@ -83,8 +61,7 @@ const slider = function () {
     });
   };
 
-  // Next and Prev //
-
+  // Next and Prev
   const nextSlide = function () {
     if (currentSlide === maxSlide - 1) {
       currentSlide = 0;
@@ -109,7 +86,7 @@ const slider = function () {
     setColor(currentSlide);
   };
 
-  // Initial Values //
+  // Initial Values
   const init = function () {
     createDots();
     activateDot(currentSlide);
