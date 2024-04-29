@@ -23,6 +23,7 @@
     />
     <!-- CSS and JS -->
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/media-queries.css" />
     <script src="./src/script.js" type="module" defer></script>
   </head>
   <body>
@@ -31,12 +32,19 @@
         <section class="slider">
           <!-- 1 -->
           <div class="slider__slide">
-            <div
-              class="slider__img-box img-1"
-              role="img"
-              aria-label="Happy Woman"
-            ></div>
-            <div class="slider__content-box">
+            <div class="slider__img-box">
+              <picture>
+                <source srcset="./images/img-1.webp" type="image/webp" />
+                <img
+                  class="slider__img"
+                  src="./images/img-1.jpg"
+                  alt="Happy Woman"
+                  width="260"
+                  height="260"
+                />
+              </picture>
+            </div>
+            <article class="slider__content-box">
               <p class="slider__content-box__text">
                 "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Officia nesciunt aliquid ex atque quibusdam. Rerum officia unde
@@ -46,13 +54,24 @@
               <p class="slider__content-box__details">
                 Senior Web Developer at Google and NASA
               </p>
-            </div>
+            </article>
           </div>
 
           <!-- 2 -->
           <div class="slider__slide">
-            <div class="slider__img-box img-2" role="img" aria-label=""></div>
-            <div class="slider__content-box">
+            <div class="slider__img-box brown-gradient">
+              <picture>
+                <source srcset="./images/img-2.webp" type="image/webp" />
+                <img
+                  class="slider__img"
+                  src="./images/img-2.jpg"
+                  alt="Cool Guy"
+                  width="260"
+                  height="260"
+                />
+              </picture>
+            </div>
+            <article class="slider__content-box">
               <p class="slider__content-box__text">
                 "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Officia nesciunt aliquid ex atque quibusdam. Rerum officia unde
@@ -62,13 +81,24 @@
               <p class="slider__content-box__details">
                 Frontend Freelaner, User Interface Designer
               </p>
-            </div>
+            </article>
           </div>
 
           <!-- 3 -->
           <div class="slider__slide">
-            <div class="slider__img-box img-3" role="img" aria-label=""></div>
-            <div class="slider__content-box">
+            <div class="slider__img-box red-gradient">
+              <picture>
+                <source srcset="./images/img-3.webp" type="image/webp" />
+                <img
+                  class="slider__img"
+                  src="./images/img-3.jpg"
+                  alt="Woman Laughing"
+                  width="260"
+                  height="260"
+                />
+              </picture>
+            </div>
+            <article class="slider__content-box">
               <p class="slider__content-box__text">
                 "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Officia nesciunt aliquid ex atque quibusdam. Rerum officia unde
@@ -78,10 +108,13 @@
               <p class="slider__content-box__details">
                 Writer at The New York Times Newspaper
               </p>
-            </div>
+            </article>
           </div>
 
-          <button class="slider__btn slider__btn--left">
+          <button
+            class="slider__btn slider__btn--left"
+            aria-label="Move slides to left"
+          >
             <svg
               class="slider__btn__icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +131,10 @@
               />
             </svg>
           </button>
-          <button class="slider__btn slider__btn--right">
+          <button
+            class="slider__btn slider__btn--right"
+            aria-label="Move slides to right"
+          >
             <svg
               class="slider__btn__icon"
               xmlns="http://www.w3.org/2000/svg"

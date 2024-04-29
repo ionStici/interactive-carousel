@@ -40,7 +40,11 @@ const slider = function () {
     slides.forEach((_, i) => {
       dotContainer.insertAdjacentHTML(
         'beforeend',
-        `<button class="slider__dot" data-slide="${i}"></button>`
+        `<button
+          class="slider__dot"
+          data-slide="${i}"
+          aria-label="Move to slide ${i + 1}">
+        </button>`
       );
     });
   };
